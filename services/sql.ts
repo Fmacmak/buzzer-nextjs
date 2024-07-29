@@ -1,43 +1,50 @@
 const mysql = require("mysql");
 
-
 export class MySQLService {
-    /**
-     * Establish a connection to my sql database
-     */
-    public static sql_connection:any;
-    public static createConnection() {
-        this.sql_connection = mysql.createConnection({
-            host: process.env.db_host,
-            user: process.env.db_user,
-            password: process.env.db_pass,
-            database: process.env.db_db,
-            multipleStatements: true
-        });
-        return this.sql_connection;
-    }
-    public static runQuery({ query, values }:{ query: string, values?: any[] }): any {
-        return new Promise((resolve, reject) => {
-            try {
-                console.log("SQL: ",query)
-                return this.createConnection().query(query, values, (err:any, result:any) => {
-                    if (err) {
-                      console.log(err);
-                        return reject(err.sqlMessage);
-                    } else {
-                        return resolve(result);
-                    }
-                });
-            } catch (error) {
-                return reject(error);
-            } finally {
-                this.sql_connection.end();
+  /**
+   * Establish a connection to my sql database
+   */
+  public static sql_connection: any;
+  public static createConnection() {
+    this.sql_connection = mysql.createConnection({
+      host: process.env.db_host,
+      user: process.env.db_user,
+      password: process.env.db_pass,
+      database: process.env.db_db,
+      multipleStatements: true,
+    });
+    return this.sql_connection;
+  }
+  public static runQuery({
+    query,
+    values,
+  }: {
+    query: string;
+    values?: any[];
+  }): any {
+    return new Promise((resolve, reject) => {
+      try {
+        console.log("SQL: ", query);
+        return this.createConnection().query(
+          query,
+          values,
+          (err: any, result: any) => {
+            if (err) {
+              console.log(err);
+              return reject(err.sqlMessage);
+            } else {
+              return resolve(result);
             }
-
-        });
-    }
+          },
+        );
+      } catch (error) {
+        return reject(error);
+      } finally {
+        this.sql_connection.end();
+      }
+    });
+  }
 }
-
 
 // async function seedUsers() {
 //   // await MySQLService.runQuery({query:`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`});
@@ -124,7 +131,7 @@ export class MySQLService {
 //     revenue.map(
 //       (rev) => MySQLService.runQuery({query:`
 //         INSERT IGNORE INTO revenue (month, revenue)
-//         VALUES (?,?);       
+//         VALUES (?,?);
 //       `, values: [rev.month, rev.revenue]}),
 //     ),
 //   );

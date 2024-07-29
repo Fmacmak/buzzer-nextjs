@@ -1,1 +1,1 @@
-## Next.js Busbuzzer 
+## Next.js Busbuzzer

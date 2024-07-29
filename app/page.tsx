@@ -1,16 +1,13 @@
-import BusBuzzerLogo from '@/app/ui/busbuzzer-logo';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
-import { afacad } from '@/app/ui/fonts';
-import Image from 'next/image';
-import clsx from 'clsx';
-import { LandingPage } from '@/app/ui/landing-page';
-
+import BusBuzzerLogo from "@/app/ui/busbuzzer-logo";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import { afacad } from "@/app/ui/fonts";
+import Image from "next/image";
+import clsx from "clsx";
+import { LandingPage } from "@/app/ui/landing-page";
 
 export default function Page() {
-  return (
-    <LandingPage></LandingPage>    
-  );
+  return <LandingPage></LandingPage>;
 }
 
 // export default function Page() {
@@ -26,7 +23,7 @@ export default function Page() {
 //           /> */}
 //           <p className={`text-xl text-gray-800 md:text-3xl md:leading-normal ${afacad.className} antialiased`}>
 //             <strong>Welcome to BusBuzzer.</strong>
-//             <br />Realtime Bus tracking and monitoring 
+//             <br />Realtime Bus tracking and monitoring
 //           </p>
 //           <Link
 //             href="/login"

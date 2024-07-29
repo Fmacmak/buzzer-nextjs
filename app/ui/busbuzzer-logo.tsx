@@ -1,5 +1,5 @@
-import { TruckIcon } from '@heroicons/react/24/outline';
-import { afacad } from '@/app/ui/fonts';
+import { TruckIcon } from "@heroicons/react/24/outline";
+import { afacad } from "@/app/ui/fonts";
 
 export default function BusBuzzerLogo() {
   return (

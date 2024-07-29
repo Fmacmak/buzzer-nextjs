@@ -1,10 +1,10 @@
 // "use client"
 
-import { generateYAxis } from '@/app/lib/utils';
-import { CalendarIcon } from '@heroicons/react/24/outline';
-import { afacad } from '@/app/ui/fonts';
-import { Revenue } from '@/app/lib/definitions';
-import { fetchRevenue } from '@/app/lib/data';
+import { generateYAxis } from "@/app/lib/utils";
+import { CalendarIcon } from "@heroicons/react/24/outline";
+import { afacad } from "@/app/ui/fonts";
+import { Revenue } from "@/app/lib/definitions";
+import { fetchRevenue } from "@/app/lib/data";
 
 // This component is representational only.
 // For data visualization UI, check out:
@@ -62,12 +62,10 @@ export default async function RevenueChart() {
   );
 }
 
-
- 
 // import { Bar, BarChart } from "recharts"
- 
+
 // import { ChartConfig, ChartContainer } from "../../ui/chart"
- 
+
 // const chartData = [
 //   { month: "January", desktop: 186, mobile: 80 },
 //   { month: "February", desktop: 305, mobile: 200 },
@@ -76,7 +74,7 @@ export default async function RevenueChart() {
 //   { month: "May", desktop: 209, mobile: 130 },
 //   { month: "June", desktop: 214, mobile: 140 },
 // ]
- 
+
 // const chartConfig = {
 //   desktop: {
 //     label: "Desktop",
@@ -87,7 +85,7 @@ export default async function RevenueChart() {
 //     color: "#60a5fa",
 //   },
 // } satisfies ChartConfig
- 
+
 // export default async function RevenueChart() {
 //   return (
 //     <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
